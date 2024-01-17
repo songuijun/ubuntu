@@ -32,11 +32,11 @@ include_directories(
 )
 
 ## Declare a C++ executable
-add_executable(aeb_control_node src/aeb_control_node.cpp)
-add_dependencies(aeb_control_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(aeb_control_node ${catkin_LIBRARIES})
+add_executable(aeb_control src/aeb_control.cpp)
+add_dependencies(aeb_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(aeb_control ${catkin_LIBRARIES})
 
 ## Mark executables for installation
-install(TARGETS aeb_control_node
+install(TARGETS aeb_control
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
