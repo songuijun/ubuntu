@@ -36,7 +36,7 @@ void PID_Wall_Following(geometry_msgs::Twist& cmd_vel, double Kp, double Ki, dou
 
     double steering_control = Kp * error + Ki * error_sum + Kd * error_d;
 
-    if (front_sonar <= 1.3)
+    if (front_sonar <= 1.0)
     {
         cmd_vel.linear.x = 0.0;
         cmd_vel.angular.z = 0.0;
@@ -65,9 +65,9 @@ int main(int argc, char **argv)
 
     ros::Rate loop_rate(30.0);
 
-    double wall_Kp = 0.25;
+    double wall_Kp = 0.3;
     double wall_Ki = 0.0;
-    double wall_Kd = 1.3;
+    double wall_Kd = 1.2;
 
     while (ros::ok())
     {
